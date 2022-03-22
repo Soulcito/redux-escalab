@@ -1,0 +1,6 @@
+@import '../App.scss';
+
+.characterList {
+  @include flexCenCen;
+  flex-wrap: wrap;
+}
