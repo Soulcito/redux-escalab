@@ -3,6 +3,7 @@ import '../assets/styles/components/Layout.scss';
 import Footer from './Footer';
 import Header from './Header';
 
+// pattern design: container
 const Layout = ({ children }) => (
   <div className="layout">
     <Header />

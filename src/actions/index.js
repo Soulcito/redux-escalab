@@ -8,7 +8,7 @@ export const deleteFavorite = (payload) => ({
   payload,
 });
 
-export const setSetcion = (payload) => ({
+export const setSection = (payload) => ({
   type: 'SET_SETCTION',
   payload,
 });
