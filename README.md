@@ -1,3 +1,18 @@
+# Recordar
+
+Agregar en el index.html del public lo siguiente
+
+```
+<div id="modal"></div>
+```
+
+deberia quedar asi
+
+```
+    <div id="root"></div>
+    <div id="modal"></div>
+```
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

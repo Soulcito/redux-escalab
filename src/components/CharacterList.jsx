@@ -1,33 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import Axios from 'axios';
+import React, { useEffect } from 'react';
 import Character from './Character';
 import Loader from './Loader';
 import Error from './Error';
 import '../assets/styles/components/CharacterList.scss';
+import useGetCharacters from '../custom-hooks/useGetCharacters';
 
 const CharacterList = () => {
-  const [characters, setCharacters] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
-
-  async function getCharacter() {
-    try {
-      const response = await Axios.get(
-        'https://rickandmortyapi.com/api/character'
-      );
-      const result = response.data.results;
-      setCharacters(result);
-      setLoading(false);
-      setError(false);
-    } catch (error) {
-      setLoading(false);
-      setError(error);
-      console.error(error);
-    }
-  }
+  const { characters, loading, error, getCharacter } = useGetCharacters();
 
   useEffect(() => {
     getCharacter();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

@@ -4,6 +4,9 @@ import '../assets/styles/components/Modal.scss';
 import { ReactComponent as SVGClose } from '../assets/static/icons/close.svg';
 
 // pattern design: container
+
+// Recordar en el index.html del public, agregar <div id="modal"></div>
+
 const Modal = (props) =>
   props.isOpen
     ? createPortal(

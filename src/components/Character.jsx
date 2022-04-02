@@ -2,25 +2,18 @@ import React, { useEffect, useState } from 'react';
 import CharacterDetail from './CharacterDetail';
 import Modal from './Modal';
 import { connect } from 'react-redux';
-//import propTypes from 'prop-types';
+import propTypes from 'prop-types';
 import { setFavorite, deleteFavorite } from '../actions';
 import { ReactComponent as SVGStar } from '../assets/static/icons/star.svg';
 import '../assets/styles/components/Character.scss';
+import useModal from '../custom-hooks/useModal';
 
 const Character = (props) => {
-  const [modal, setModal] = useState(false);
+  const { modal, handleCloseModal, handleOpenModal } = useModal();
   const [favorite, setFavorite] = useState(false);
 
   const { data, favoriteCharacters } = props;
   const { id, image, name, status, gender, species } = data;
-
-  const handleCloseModal = () => {
-    setModal(false);
-  };
-
-  const handleOpenModal = () => {
-    setModal(true);
-  };
 
   const handleSetFavorite = () => {
     props.setFavorite({ data });
@@ -86,6 +79,11 @@ const Character = (props) => {
   );
 };
 
+// Component Documentation
+Character.propTypes = {
+  data: propTypes.object.isRequired,
+};
+
 // react-redux native with HOC
 const mapStateToProps = (state) => {
   return {
@@ -101,3 +99,6 @@ const mapDispatchToProps = {
 // HOC
 export default connect(mapStateToProps, mapDispatchToProps)(Character);
 // Se pasa null si no hay acciones que pasar ...
+
+// Alias component in the browser
+Character.displayName = 'Character Component';
