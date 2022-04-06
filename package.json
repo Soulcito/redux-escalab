@@ -18,8 +18,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "webpack --mode=development",
+    "build": "webpack --mode=production",
+    "dev-server": "webpack serve",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -42,7 +43,24 @@
     ]
   },
   "devDependencies": {
-    "redux-devtools-extension": "^2.13.8",
-    "redux-logger": "^3.0.6"
+    "@babel/core": "7.12.17",
+    "@babel/preset-env": "7.12.17",
+    "@babel/preset-react": "7.12.13",
+    "@svgr/webpack": "5.5.0",
+    "babel-loader": "8.2.2",
+    "copy-webpack-plugin": "7.0.0",
+    "core-js": "3.9.0",
+    "css-loader": "5.0.2",
+    "file-loader": "6.2.0",
+    "html-webpack-plugin": "5.2.0",
+    "image-webpack-loader": "7.0.1",
+    "redux-devtools-extension": "2.13.8",
+    "redux-logger": "3.0.6",
+    "regenerator-runtime": "0.13.7",
+    "sass-loader": "^12.6.0",
+    "style-loader": "2.0.0",
+    "webpack": "5.23.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.5.0"
   }
 }

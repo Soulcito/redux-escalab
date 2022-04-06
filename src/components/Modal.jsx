@@ -1,7 +1,7 @@
 import React from 'react';
 import { createPortal } from 'react-dom';
 import '../assets/styles/components/Modal.scss';
-import { ReactComponent as SVGClose } from '../assets/static/icons/close.svg';
+import SVGClose from '../assets/static/icons/close.svg';
 
 // pattern design: container
 
